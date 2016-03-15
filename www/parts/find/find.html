@@ -5,21 +5,21 @@
   <ion-content class="has-header">
     <div class="list">
       <label class="item item-input"><span class="input-label">产品编码</span>
-        <input type="text" ng-module='pid'>
+        <input type="text" ng-model='pid'>
       </label>
     </div>
-    <div class="list card" ng-show="pid !== ''">
-      <div class="item item-avatar"><img data-ng-src="mcfly.jpg">
-        <h2>产品详情</h2>
-        <p>滕森轮胎</p>
+    <div class="list card" ng-if=" pid !== '' ">
+      <div class="item item-avatar">
+        <img data-ng-src="./img/20130826194826052605.jpg">
+        <h2>电动自行车系列</h2>
+        <p>TS600</p>
       </div>
-      <div class="item item-body"><img class="full-image" data-ng-src="delorean.jpg">
-        <p>
-        </p>
+      <div class="item item-body">
+        <p>除了好，不知道用什么其他言语来形容</p>
       </div>
       <div class="item tabs tabs-secondary tabs-icon-left">
         <a class="tab-item" href="javascript:return false" ng-click="scanBarcode()">
-          <i class="icon ion-chatbox"></i> 扫描 </a>
+          <i class="icon ion-ios-barcode-outline"></i> 扫描 </a>
       </div>
     </div>
     </div>
