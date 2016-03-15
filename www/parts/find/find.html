@@ -1,3 +1,27 @@
-<ion-view id="guidePage" view-title="引导页" cache-view="false">
-  
+<ion-view id="find" view-title="查找" cache-view="false">
+  <div class="bar bar-header bar-positive ">
+    <h1 class="title">产品查找</h1>
+  </div>
+  <ion-content class="has-header">
+    <div class="list">
+      <label class="item item-input"><span class="input-label">产品编码</span>
+        <input type="text" ng-module='pid'>
+      </label>
+    </div>
+    <div class="list card" ng-show="pid !== ''">
+      <div class="item item-avatar"><img data-ng-src="mcfly.jpg">
+        <h2>产品详情</h2>
+        <p>滕森轮胎</p>
+      </div>
+      <div class="item item-body"><img class="full-image" data-ng-src="delorean.jpg">
+        <p>
+        </p>
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="javascript:return false" ng-click="scanBarcode()">
+          <i class="icon ion-chatbox"></i> 扫描 </a>
+      </div>
+    </div>
+    </div>
+  </ion-content>
 </ion-view>
