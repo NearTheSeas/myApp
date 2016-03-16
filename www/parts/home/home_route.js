@@ -5,15 +5,15 @@ angular.module('home.route', ['home.controller'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-    $stateProvider
+  $stateProvider
 
-      .state('tab.home', {
-        url: '/home',
-        views: {
-          'tab-home': {
-            templateUrl: 'parts/home/home.html',
-            controller: 'HomeController'
-          }
-        }
-      })
+    .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home': {
+        templateUrl: 'parts/home/home.html',
+        controller: 'HomeController'
+      }
+    }
+  })
 });

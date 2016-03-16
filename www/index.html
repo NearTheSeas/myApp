@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/route.js"></script>
+  <!--tab页-->
+  <script src="parts/tab/tab_route.js"></script>
+  <script src="parts/tab/tab_controller.js"></script>
+  <!--登录页-->
+  <script src="parts/login/login_route.js"></script>
+  <script src="parts/login/login_controller.js"></script>
+  <!--首页-->
+  <script src="parts/home/home_route.js"></script>
+  <script src="parts/home/home_controller.js"></script>
+  <!--查找-->
+  <script src="parts/find/find_route.js"></script>
+  <script src="parts/find/find_controller.js"></script>
+  <!--更多-->
+  <script src="parts/more/more_route.js"></script>
+  <script src="parts/more/more_controller.js"></script>
+  <!--测试部分-->
+  <script src="parts/test/test_route.js"></script>
+  <script src="parts/test/test_controller.js"></script>
+</head>
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+<body ng-app="starter">
+  <ion-nav-view></ion-nav-view>
+</body>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-		<script src="lib/ngCordova/dist/ng-cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/global.js"></script>
-    <script src="js/route.js"></script>
-
-    <!--tab页-->
-		<script src="parts/tab/tab_route.js"></script>
-		<script src="parts/tab/tab_controller.js"></script>
-
-		<!--登录页-->
-		<script src="parts/login/login_route.js"></script>
-		<script src="parts/login/login_controller.js"></script>
-
-		<!--首页-->
-		<script src="parts/home/home_route.js"></script>
-		<script src="parts/home/home_controller.js"></script>
-
-		<!--查找-->
-		<script src="parts/find/find_route.js"></script>
-		<script src="parts/find/find_controller.js"></script>
-
-		<!--更多-->
-		<script src="parts/more/more_route.js"></script>
-		<script src="parts/more/more_controller.js"></script>
-
-  </head>
-  <body ng-app="starter">
-    <ion-nav-view></ion-nav-view>
-  </body>
 </html>
