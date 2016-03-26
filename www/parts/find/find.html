@@ -1,27 +1,28 @@
 <ion-view id="find" view-title="查找" cache-view="false">
-  <div class="bar bar-header bar-positive ">
-    <h1 class="title">产品查找</h1>
-  </div>
-  <ion-content class="has-header">
-    <div class="list">
-      <label class="item item-input"><span class="input-label">产品编码</span>
-        <input type="text" ng-model='pid'>
-      </label>
+    <div class="bar bar-header bar-positive ">
+        <h1 class="title">产品查找</h1>
     </div>
-    <div class="list card" ng-if=" pid !== '' ">
-      <div class="item item-avatar">
-        <img data-ng-src="./img/20130826194826052605.jpg">
-        <h2>电动自行车系列</h2>
-        <p>TS600</p>
-      </div>
-      <div class="item item-body">
-        <p>除了好，不知道用什么其他言语来形容</p>
-      </div>
-      <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="javascript:return false" ng-click="scanBarcode()">
-          <i class="icon ion-ios-barcode-outline"></i> 扫描 </a>
-      </div>
-    </div>
-    </div>
-  </ion-content>
+    <ion-content class="has-header">
+        <div class="list">
+            <label class="item item-input"><span class="input-label">产品编码：</span>
+                <input type="text" ng-model='pid'>
+            </label>
+        </div>
+        <!-- ng-if=" pid !== '' " -->
+        <div class="list card">
+            <div class="item item-thumbnail-left">
+                <img data-ng-src="./img/20130826194826052605.jpg">
+                <h2>产品名称：TS600</h2>
+                <p>编码</p>
+                <p>规格</p>
+                <p>最大容量</p>
+            </div>
+            <div class="item item-body">
+                <p>库存信息</p>
+            </div>
+        </div>
+        <div class="padding">
+            <input type="button" ng-click="scanBarcode()" class=" button button-block button-outline button-calm " value="扫一扫"></input>
+        </div>
+    </ion-content>
 </ion-view>
