@@ -2,26 +2,10 @@
  * Created by xuwen on 2016/3/13.
  */
 angular.module('home.controller', [])
-    .controller('HomeController', function($scope, $ionicActionSheet, $ionicModal, $cordovaBarcodeScanner) {
+    .controller('HomeController', function($scope, $state, $ionicActionSheet, $ionicModal, $cordovaBarcodeScanner) {
 
         $scope.receipt = {};
-
-        // 创建并载入modal
-        // 产品货架
-        $ionicModal.fromTemplateUrl('product-shelf.html', function(modal) {
-            $scope.productShelf = modal;
-        }, {
-            scope: $scope,
-            animation: 'slide-in-up'
-        });
-        // 仓位货架
-        $ionicModal.fromTemplateUrl('position-shelf.html', function(modal) {
-            $scope.positionShelf = modal;
-        }, {
-            scope: $scope,
-            animation: 'slide-in-up'
-        });
-        // 显示入库modal
+        // 显示入库 ActionSheet
         $scope.ruku = function() {
             $ionicActionSheet.show({
                 buttons: [
@@ -33,10 +17,10 @@ angular.module('home.controller', [])
                 buttonClicked: function(index) {
                     switch (index) {
                         case 0:
-                            $scope.productShelf.show();
+                            $state.go("receipt-shelf");
                             return true;
                         case 1:
-                            $scope.productShelf.show();
+                            $state.go("receipt-shelf");
                             return true;
                         default:
                             return true;
@@ -45,7 +29,7 @@ angular.module('home.controller', [])
                 }
             });
         };
-        // 显示出库modal
+        // 显示出库 ActionSheet
         $scope.chuku = function() {
             $ionicActionSheet.show({
                 buttons: [
@@ -65,44 +49,29 @@ angular.module('home.controller', [])
                 }
             });
         };
-        // 关闭modal
-        $scope.closemodal = function() {
-            $scope.productShelf.hide();
-            $scope.productShelf.hide();
-        };
-        // reset暂时不好用~~~
-        $scope.resetProduct = function() {
-            // $scope.receipt.product_number = null;
-        };
-        $scope.resetShelf = function() {
-            $scope.receipt.shelf_number = null;
-        };
-        // 表单提交时调用
-        $scope.uploadReceipt = function() {
-            console.log($scope.receipt);
-            $scope.closemodal();
-        };
-        // 扫一扫
-        $scopte.receipt = {};
-        $scope.scanBarcode = function() {
-            $cordovaBarcodeScanner.scan().then(
-                function(imageData) {
-                    var result = imageData.text;
-                    // TODO：正则匹配类型，赋值给receipt
-                    $scopte.receipt
-                },
-                function(error) {
-                    alert("An error happened -> " + error);
-                });
-            // jsonp查询产品详情
-            // $http.jsonp('http://localhost:3000/product/detail/' + $scope.values.pid + '?callback=JSON_CALLBACK')
-            $http.jsonp(GlobalVariable.queryProduct + $scope.values.pid + '?callback=JSON_CALLBACK')
-                .success(function(product) {
-                    product.picture = GlobalVariable.imagePath + product.picture;
-                    $scope.product = product;
-                    // 修改图片的路径
-                }).error(function(err) {
-                    console.log(err);
-                });
-        };
+        // ================取消modal部分，因为调用扫一扫后 modal自己就隐藏了================
+        // 创建并载入modal
+        // 产品货架
+        // $ionicModal.fromTemplateUrl('product-shelf.html', function(modal) {
+        //     $scope.productShelf = modal;
+        // }, {
+        //     scope: $scope,
+        //     animation: 'slide-in-up'
+        // });
+        // // 仓位货架
+        // $ionicModal.fromTemplateUrl('position-shelf.html', function(modal) {
+        //     $scope.positionShelf = modal;
+        // }, {
+        //     scope: $scope,
+        //     animation: 'slide-in-up'
+        // });
+        // // 关闭modal
+        // $scope.closemodal = function() {
+        //     $scope.productShelf.hide();
+        //     $scope.productShelf.hide();
+        // };
+
+        // $scope.resetShelf = function() {
+        //     $scope.receipt.shelf_number = null;
+        // };
     })

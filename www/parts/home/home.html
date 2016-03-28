@@ -20,20 +20,16 @@
     </ion-content>
 </ion-view>
 <!-- 产品货架 -->
-<script id="product-shelf.html" type="text/ng-template">
+<!-- <script id="product-shelf.html" type="text/ng-template">
     <div class="modal">
-        <!-- Modal header bar -->
         <ion-header-bar class="bar-secondary">
             <h1 class="title">关联货架产品</h1>
             <button class="button button-clear button-positive" ng-click="closemodal()">取消</button>
         </ion-header-bar>
-        <!-- Modal content area -->
         <ion-content>
             <form ng-submit="uploadReceipt()">
                 <div class="list">
                     <label class="item item-input item-select">
-                        <!-- <span class="input-label">产品班别:</span> -->
-                        <!--  <input type="text" ng-model="receipt.team"> -->
                         <div class="input-label">
                             产品班别:
                         </div>
@@ -50,38 +46,40 @@
                     <label class="item item-input">
                         <span class="input-label">产品编号:</span>
                         <input type="text" ng-model="receipt.product_number">
-                        <!-- <button class="button icon ion-ios-refresh-empty" ng-click="resetProduct()"></button> -->
                     </label>
                     <label class="item item-input">
                         <span class="input-label">货架编号:</span>
                         <input type="text" ng-model="receipt.shelf_number">
-                        <!-- <button class="button icon ion-ios-refresh-empty" ng-click="resetShelf()"></button> -->
                     </label>
                     <label class="item item-input">
                         <span class="input-label">产品编码:</span>
-                        <input type="text" ng-model="receipt.currentProduct">
+                        <input type="text" ng-model="receipt.queryCode">
                     </label>
                     <label class="item item-input">
                         <span class="input-label">货架容量:</span>
                         <input type="text" ng-model="receipt.products.length">
                     </label>
                 </div>
-                <div class="padding">
-                    <button type="submit" class="button button-block button-positive">提交</button>
+                <div class="padding row">
+                    <div class="col-50 padding">
+                        <button ng-click="scanBarcode()" class="button button-block button-positive">扫一扫</button>
+                    </div>
+                    <div class="col-50 padding">
+                        <button type="submit" class="button button-block button-positive">提交</button>
+                    </div>
                 </div>
             </form>
         </ion-content>
     </div>
 </script>
+ -->
 <!-- 仓位货架 -->
-<script id="position-shelf.html" type="text/ng-template">
+<!-- <script id="position-shelf.html" type="text/ng-template">
     <div class="modal">
-        <!-- Modal header bar -->
         <ion-header-bar class="bar-secondary">
             <h1 class="title">关联仓位货架</h1>
             <button class="button button-clear button-positive" ng-click="closemodal()">取消</button>
         </ion-header-bar>
-        <!-- Modal content area -->
         <ion-content>
             <form ng-submit="saveReceipt()">
                 <div class="list">
@@ -95,4 +93,4 @@
             </form>
         </ion-content>
     </div>
-</script>
+</script> -->

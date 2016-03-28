@@ -1,0 +1,21 @@
+<!-- 仓位货架 -->
+<ion-view view-title="仓位货架">
+    <div class="modal">
+        <ion-header-bar class="bar-secondary">
+            <h1 class="title">关联仓位货架</h1>
+            <button class="button button-clear button-positive" ng-click="closemodal()">取消</button>
+        </ion-header-bar>
+        <ion-content>
+            <form ng-submit="saveReceipt()">
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+                    </label>
+                </div>
+                <div class="padding">
+                    <button type="submit" class="button button-block button-positive">Create Task</button>
+                </div>
+            </form>
+        </ion-content>
+    </div>
+</ion-view>
